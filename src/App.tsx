@@ -12,6 +12,7 @@ import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import UserGuide from "./pages/UserGuide";
+import Tasks from "./pages/Tasks";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/guide" element={<UserGuide />} />
+                <Route path="/tasks" element={<Tasks />} />
               </Routes>
             </div>
           </main>
