@@ -1,11 +1,10 @@
-
 import { Card } from "@/components/ui/card";
-import { CheckCircle, Circle } from "lucide-react";
+import { CheckCircle, Circle, Heart } from "lucide-react";
 
 const WeeklyPlanning = () => {
   const businessPriorities = [
     "Launch new earring collection",
-    "Finish custom order for client",
+    "Finish custom order for client", 
     "Update workshop schedule",
   ];
 

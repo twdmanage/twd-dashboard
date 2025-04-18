@@ -1,8 +1,7 @@
-
 import { Card } from "@/components/ui/card";
 import { 
   ShoppingCart, 
-  Tool, 
+  Wrench, 
   MessageSquare, 
   Store, 
   Users, 
@@ -23,7 +22,7 @@ const overviewItems = [
     area: "Production",
     focus: "Finish 10 pairs earrings",
     status: "7/10 completed",
-    icon: Tool,
+    icon: Wrench,
     color: "text-wood-600",
   },
   {
