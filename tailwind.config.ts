@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,25 +25,43 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        wood: {
+          50: "#F6F0EA",
+          100: "#E6D5C3",
+          200: "#D4B79D",
+          300: "#C19876",
+          400: "#B0794F",
+          500: "#8B613F",
+          600: "#664830",
+          700: "#442F20",
+          800: "#221710",
+        },
+        sage: {
+          50: "#F2F5F3",
+          100: "#DCE5DF",
+          200: "#C5D4CB",
+          300: "#ACC3B6",
+          400: "#93B3A1",
+          500: "#769082",
+          600: "#5A6D63",
+          700: "#3D4842",
+          800: "#1F2421",
+        },
         primary: {
-          DEFAULT: "#141413",
+          DEFAULT: "#8B613F",
           foreground: "#FAFAF8",
         },
         secondary: {
-          DEFAULT: "#828179",
-          foreground: "#FAFAF8",
+          DEFAULT: "#93B3A1",
+          foreground: "#1F2421",
         },
         muted: {
-          DEFAULT: "#E6E4DD",
-          foreground: "#605F5B",
+          DEFAULT: "#F6F0EA",
+          foreground: "#664830",
         },
         accent: {
-          DEFAULT: "#EBDBBC",
-          foreground: "#3A3935",
-        },
-        card: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#141413",
+          DEFAULT: "#E6D5C3",
+          foreground: "#442F20",
         },
       },
       borderRadius: {
