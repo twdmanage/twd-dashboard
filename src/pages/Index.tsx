@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Calendar, CheckSquare, Globe } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleGoogleCalendarConnect = () => {
-    // Using a test calendar URL - you should replace this with your actual Google Calendar URL
     const googleCalendarURL = "https://calendar.google.com";
     window.open(googleCalendarURL, '_blank');
     toast.success("Opening Google Calendar");
@@ -42,53 +43,51 @@ const Index = () => {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-4xl font-bold text-wood-700">Thys Wood Design Dashboard</h1>
-        <p className="text-sage-600">Balancing Business & Life</p>
+        <h1 className="text-4xl font-bold text-wood-700">{t("dashboard.title")}</h1>
+        <p className="text-sage-600">{t("dashboard.subtitle")}</p>
       </header>
 
       <WeeklyOverview />
-      
       <KeyMetrics />
-      
       <WeeklyPlanning />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="p-6">
           <div className="flex items-center space-x-2 mb-4">
             <Calendar className="h-5 w-5 text-wood-500" />
-            <h3 className="text-lg font-medium text-wood-700">Google Calendar</h3>
+            <h3 className="text-lg font-medium text-wood-700">{t("dashboard.calendar.title")}</h3>
           </div>
           <p className="text-sm text-muted-foreground">
-            Color-coded calendar integration for business and family time management
+            {t("dashboard.calendar.description")}
           </p>
           <Button 
             onClick={handleGoogleCalendarConnect}
             className="mt-4 px-4 py-2 bg-wood-500 text-white rounded-md hover:bg-wood-600 transition-colors"
           >
-            Open Calendar
+            {t("dashboard.calendar.button")}
           </Button>
         </Card>
 
         <Card className="p-6">
           <div className="flex items-center space-x-2 mb-4">
             <CheckSquare className="h-5 w-5 text-sage-500" />
-            <h3 className="text-lg font-medium text-wood-700">Task Manager</h3>
+            <h3 className="text-lg font-medium text-wood-700">{t("dashboard.taskManager.title")}</h3>
           </div>
           <p className="text-sm text-muted-foreground">
-            Organize and track daily tasks for both business and personal life
+            {t("dashboard.taskManager.description")}
           </p>
           <Button 
             onClick={handleTaskManager}
             className="mt-4 px-4 py-2 bg-sage-500 text-white rounded-md hover:bg-sage-600 transition-colors"
           >
-            View Tasks
+            {t("dashboard.taskManager.button")}
           </Button>
         </Card>
 
         <Card className="p-6">
           <div className="flex items-center space-x-2 mb-4">
             <Globe className="h-5 w-5 text-wood-500" />
-            <h3 className="text-lg font-medium text-wood-700">Quick Links</h3>
+            <h3 className="text-lg font-medium text-wood-700">{t("dashboard.quickLinks.title")}</h3>
           </div>
           <ul className="space-y-2">
             <li>
@@ -97,7 +96,7 @@ const Index = () => {
                 className="w-full text-left" 
                 onClick={() => handleQuickLinks('analytics')}
               >
-                📊 Business Analytics
+                {t("dashboard.quickLinks.analytics")}
               </Button>
             </li>
             <li>
@@ -106,7 +105,7 @@ const Index = () => {
                 className="w-full text-left" 
                 onClick={() => handleQuickLinks('social')}
               >
-                📷 Social Media Manager
+                {t("dashboard.quickLinks.social")}
               </Button>
             </li>
             <li>
@@ -115,7 +114,7 @@ const Index = () => {
                 className="w-full text-left" 
                 onClick={() => handleQuickLinks('workshop')}
               >
-                📅 Workshop Schedule
+                {t("dashboard.quickLinks.workshop")}
               </Button>
             </li>
           </ul>
