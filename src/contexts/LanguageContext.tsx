@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useState, ReactNode } from "react";
 import { languages, Language, LanguageContextType, TranslationValue } from "./types";
 import { translations } from "./translations";
@@ -46,7 +47,18 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Translation function that returns the translation for a given key
   const t = (key: string): TranslationValue => {
     const currentTranslations = translations[currentLanguage.value] || translations["en-US"];
-    return currentTranslations[key] || key;
+    // Check if the translation exists in the current language
+    if (key in currentTranslations) {
+      return currentTranslations[key];
+    }
+    
+    // If not found in current language, try to get from English as fallback
+    if (currentLanguage.value !== "en-US" && key in translations["en-US"]) {
+      return translations["en-US"][key];
+    }
+    
+    // If still not found, return the key itself as fallback
+    return key;
   };
 
   // Provide the language context to the app
@@ -55,4 +67,18 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </LanguageContext.Provider>
   );
+};
+
+// Helper function for rendering TranslationValue (exported for use in components)
+export const renderTranslation = (translation: TranslationValue): React.ReactNode => {
+  if (Array.isArray(translation)) {
+    return (
+      <ul className="list-disc pl-6 space-y-2">
+        {translation.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+  return translation;
 };

@@ -138,6 +138,7 @@ export const deTranslations: Record<string, TranslationValue> = {
     "Geschäftszeiten",
     "Familienzeit"
   ],
+  "guide.planning.title": "3. Wöchentliche Planung",
   "guide.usage.title": "Tipps zur optimalen Nutzung",
   "guide.usage.updates": "Regelmäßige Updates",
   "guide.usage.updates.items": [
