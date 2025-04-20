@@ -24,6 +24,28 @@ interface LanguageContextType {
 // Simple translations object
 const translations: Record<string, Record<string, string>> = {
   "en-US": {
+    // App
+    "app.title": "Finance",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Premium User",
+    
+    // Sidebar
+    "sidebar.dashboard": "Dashboard",
+    "sidebar.analytics": "Analytics",
+    "sidebar.transactions": "Transactions",
+    "sidebar.notifications": "Notifications",
+    "sidebar.profile": "Profile",
+    "sidebar.guide": "User Guide",
+    "sidebar.settings": "Settings",
+    "sidebar.tasks": "Tasks",
+    
+    // Tasks
+    "tasks.title": "Task Manager",
+    "tasks.comingSoon": "Task management functionality coming soon...",
+    
+    // Settings
     "settings.title": "Settings",
     "settings.subtitle": "Customize your account preferences",
     "settings.preferences": "Preferences",
@@ -40,6 +62,28 @@ const translations: Record<string, Record<string, string>> = {
     "settings.passwordProtection.desc": "Require password for sensitive actions"
   },
   "es": {
+    // App
+    "app.title": "Finanzas",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Usuario Premium",
+    
+    // Sidebar
+    "sidebar.dashboard": "Panel",
+    "sidebar.analytics": "Analítica",
+    "sidebar.transactions": "Transacciones",
+    "sidebar.notifications": "Notificaciones",
+    "sidebar.profile": "Perfil",
+    "sidebar.guide": "Guía de Usuario",
+    "sidebar.settings": "Configuración",
+    "sidebar.tasks": "Tareas",
+    
+    // Tasks
+    "tasks.title": "Gestor de Tareas",
+    "tasks.comingSoon": "Funcionalidad de gestión de tareas próximamente...",
+    
+    // Settings
     "settings.title": "Configuración",
     "settings.subtitle": "Personaliza tus preferencias de cuenta",
     "settings.preferences": "Preferencias",
@@ -56,6 +100,28 @@ const translations: Record<string, Record<string, string>> = {
     "settings.passwordProtection.desc": "Requerir contraseña para acciones sensibles"
   },
   "fr": {
+    // App
+    "app.title": "Finance",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Utilisateur Premium",
+    
+    // Sidebar
+    "sidebar.dashboard": "Tableau de bord",
+    "sidebar.analytics": "Analytique",
+    "sidebar.transactions": "Transactions",
+    "sidebar.notifications": "Notifications",
+    "sidebar.profile": "Profil",
+    "sidebar.guide": "Guide d'utilisateur",
+    "sidebar.settings": "Paramètres",
+    "sidebar.tasks": "Tâches",
+    
+    // Tasks
+    "tasks.title": "Gestionnaire de Tâches",
+    "tasks.comingSoon": "Fonctionnalité de gestion des tâches à venir...",
+    
+    // Settings
     "settings.title": "Paramètres",
     "settings.subtitle": "Personnalisez vos préférences de compte",
     "settings.preferences": "Préférences",
@@ -72,6 +138,28 @@ const translations: Record<string, Record<string, string>> = {
     "settings.passwordProtection.desc": "Demander un mot de passe pour les actions sensibles"
   },
   "de": {
+    // App
+    "app.title": "Finanzen",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Premium Benutzer",
+    
+    // Sidebar
+    "sidebar.dashboard": "Dashboard",
+    "sidebar.analytics": "Analytik",
+    "sidebar.transactions": "Transaktionen",
+    "sidebar.notifications": "Benachrichtigungen",
+    "sidebar.profile": "Profil",
+    "sidebar.guide": "Benutzerhandbuch",
+    "sidebar.settings": "Einstellungen",
+    "sidebar.tasks": "Aufgaben",
+    
+    // Tasks
+    "tasks.title": "Aufgabenmanager",
+    "tasks.comingSoon": "Aufgabenverwaltungsfunktionalität in Kürze verfügbar...",
+    
+    // Settings
     "settings.title": "Einstellungen",
     "settings.subtitle": "Passen Sie Ihre Kontoeinstellungen an",
     "settings.preferences": "Präferenzen",
@@ -88,6 +176,28 @@ const translations: Record<string, Record<string, string>> = {
     "settings.passwordProtection.desc": "Passwort für sensible Aktionen anfordern"
   },
   "nl": {
+    // App
+    "app.title": "Financiën",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Premium Gebruiker",
+    
+    // Sidebar
+    "sidebar.dashboard": "Dashboard",
+    "sidebar.analytics": "Analyse",
+    "sidebar.transactions": "Transacties",
+    "sidebar.notifications": "Meldingen",
+    "sidebar.profile": "Profiel",
+    "sidebar.guide": "Gebruikersgids",
+    "sidebar.settings": "Instellingen",
+    "sidebar.tasks": "Taken",
+    
+    // Tasks
+    "tasks.title": "Taakbeheer",
+    "tasks.comingSoon": "Taakbeheerfunctionaliteit binnenkort beschikbaar...",
+    
+    // Settings
     "settings.title": "Instellingen",
     "settings.subtitle": "Pas je accountvoorkeuren aan",
     "settings.preferences": "Voorkeuren",
@@ -104,6 +214,28 @@ const translations: Record<string, Record<string, string>> = {
     "settings.passwordProtection.desc": "Wachtwoord vereisen voor gevoelige acties"
   },
   "af": {
+    // App
+    "app.title": "Finansies",
+    
+    // User
+    "user.name": "John Doe",
+    "user.role": "Premium Gebruiker",
+    
+    // Sidebar
+    "sidebar.dashboard": "Paneelbord",
+    "sidebar.analytics": "Analise",
+    "sidebar.transactions": "Transaksies",
+    "sidebar.notifications": "Kennisgewings",
+    "sidebar.profile": "Profiel",
+    "sidebar.guide": "Gebruikersgids",
+    "sidebar.settings": "Instellings",
+    "sidebar.tasks": "Take",
+    
+    // Tasks
+    "tasks.title": "Taakbestuurder",
+    "tasks.comingSoon": "Taakbestuursfunksionaliteit kom binnekort...",
+    
+    // Settings
     "settings.title": "Instellings",
     "settings.subtitle": "Pas jou rekeningstvoorkeure aan",
     "settings.preferences": "Voorkeure",

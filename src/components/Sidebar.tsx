@@ -1,25 +1,29 @@
-import { Book, Home, PieChart, Settings, User, CreditCard, Bell } from "lucide-react";
+
+import { Book, Home, PieChart, Settings, User, CreditCard, Bell, CheckSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
-
-const menuItems = [
-  { icon: Home, label: "Dashboard", path: "/" },
-  { icon: PieChart, label: "Analytics", path: "/analytics" },
-  { icon: CreditCard, label: "Transactions", path: "/transactions" },
-  { icon: Bell, label: "Notifications", path: "/notifications" },
-  { icon: User, label: "Profile", path: "/profile" },
-  { icon: Book, label: "User Guide", path: "/guide" },
-  { icon: Settings, label: "Settings", path: "/settings" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Sidebar = () => {
   const location = useLocation();
+  const { t } = useLanguage();
+  
+  const menuItems = [
+    { icon: Home, label: t("sidebar.dashboard"), path: "/" },
+    { icon: PieChart, label: t("sidebar.analytics"), path: "/analytics" },
+    { icon: CreditCard, label: t("sidebar.transactions"), path: "/transactions" },
+    { icon: Bell, label: t("sidebar.notifications"), path: "/notifications" },
+    { icon: User, label: t("sidebar.profile"), path: "/profile" },
+    { icon: Book, label: t("sidebar.guide"), path: "/guide" },
+    { icon: Settings, label: t("sidebar.settings"), path: "/settings" },
+    { icon: CheckSquare, label: t("sidebar.tasks"), path: "/tasks" },
+  ];
 
   return (
     <div className="fixed left-0 top-0 h-full w-64 glass-card border-r border-white/10">
       <div className="flex flex-col h-full">
         <div className="p-6">
-          <h2 className="text-2xl font-bold text-primary">Finance</h2>
+          <h2 className="text-2xl font-bold text-primary">{t("app.title")}</h2>
         </div>
         
         <nav className="flex-1 px-4">
@@ -51,8 +55,8 @@ const Sidebar = () => {
           <div className="flex items-center gap-3 px-4 py-3">
             <User className="h-8 w-8 rounded-full bg-accent p-1" />
             <div className="flex flex-col">
-              <span className="text-sm font-medium">John Doe</span>
-              <span className="text-xs text-secondary">Premium User</span>
+              <span className="text-sm font-medium">{t("user.name")}</span>
+              <span className="text-xs text-secondary">{t("user.role")}</span>
             </div>
           </div>
         </div>
