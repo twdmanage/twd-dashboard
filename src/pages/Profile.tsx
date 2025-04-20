@@ -82,4 +82,4 @@ const Profile = () => {
   );
 };
 
-export default Notifications;
+export default Profile;

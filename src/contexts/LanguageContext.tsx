@@ -20,7 +20,6 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-// Simple translations object
 const translations: Record<string, Record<string, string>> = {
   "en-US": {
     // App
@@ -101,7 +100,6 @@ const translations: Record<string, Record<string, string>> = {
     "profile.accountStatus": "Account Status",
 
     // User specific translations
-    "user.name": "John Doe",
     "user.email": "john.doe@example.com",
     "user.phone": "+1 (555) 123-4567",
     "user.location": "San Francisco, CA",
@@ -383,7 +381,7 @@ const translations: Record<string, Record<string, string>> = {
     "transactions.shopping": "Winkelen",
     "transactions.timeAgo": "2 uur geleden",
     "notifications.title": "Meldingen",
-    "notifications.subtitle": "Blijf op de hoogte van je accountactiviteit",
+    "notifications.subtitle": "Bly op hoogte van je accountactiviteit",
     "notifications.recentNotifications": "Recente meldingen",
     "notifications.paymentSuccessful": "Betaling succesvol",
     "notifications.paymentSuccessDesc": "Je laatste betaling is succesvol verwerkt",
@@ -491,7 +489,6 @@ const translations: Record<string, Record<string, string>> = {
   }
 };
 
-// Default language context
 const defaultLanguageContext: LanguageContextType = {
   currentLanguage: languages[0],
   setLanguage: () => {},
@@ -514,7 +511,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Initialize language from localStorage if available
   React.useEffect(() => {
     const savedLanguage = localStorage.getItem('appLanguage');
     if (savedLanguage) {
@@ -522,7 +518,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  // Translate function
   const t = (key: string): string => {
     const langTranslations = translations[currentLanguage.value];
     return langTranslations && langTranslations[key] ? langTranslations[key] : key;
