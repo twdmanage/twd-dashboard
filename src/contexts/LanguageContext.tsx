@@ -17,10 +17,12 @@ export const languages: Language[] = [
 interface LanguageContextType {
   currentLanguage: Language;
   setLanguage: (languageValue: string) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | string[];
 }
 
-const translations: Record<string, Record<string, string>> = {
+type TranslationValue = string | string[];
+
+const translations: Record<string, Record<string, TranslationValue>> = {
   "en-US": {
     // App
     "app.title": "Finance",
@@ -222,7 +224,7 @@ const translations: Record<string, Record<string, string>> = {
     "settings.language.desc": "Elige tu idioma preferido",
     "settings.security": "Seguridad",
     "settings.twoFactor": "Autenticación de dos factores",
-    "settings.twoFactor.desc": "Añade una capa extra de seguridad",
+    "settings.twoFactor.desc": "Añadir una capa extra de seguridad",
     "settings.passwordProtection": "Protección con contraseña",
     "settings.passwordProtection.desc": "Requerir contraseña para acciones sensibles",
     "analytics.title": "Resumen de Analítica",
@@ -310,7 +312,7 @@ const translations: Record<string, Record<string, string>> = {
     "transactions.shopping": "Achats",
     "transactions.timeAgo": "il y a 2 heures",
     "notifications.title": "Notifications",
-    "notifications.subtitle": "Restez informé de l'activité de votre compte",
+    "notifications.subtitle": "Bleiver informé de l'activité de votre compte",
     "notifications.recentNotifications": "Notifications Récentes",
     "notifications.paymentSuccessful": "Paiement Réussi",
     "notifications.paymentSuccessDesc": "Votre dernier paiement a été traité avec succès",
@@ -376,7 +378,7 @@ const translations: Record<string, Record<string, string>> = {
     "settings.twoFactor": "Zwei-Faktor-Authentifizierung",
     "settings.twoFactor.desc": "Fügen Sie eine zusätzliche Sicherheitsebene hinzu",
     "settings.passwordProtection": "Passwortschutz",
-    "settings.passwordProtection.desc": "Passwort für sensible Aktionen anfordern",
+    "settings.passwordProtection.desc": "Wachtwort für sensible Aktionen anfordern",
     "analytics.title": "Analytische Übersicht",
     "analytics.subtitle": "Verfolgen Sie Ihre finanzielle Leistung",
     "analytics.performanceTrends": "Leistungstrends",
@@ -394,7 +396,7 @@ const translations: Record<string, Record<string, string>> = {
     "notifications.failedTransaction": "Fehlgeschlagene Transaktion",
     "notifications.transactionFailedDesc": "Transaktion #12345 konnte nicht verarbeitet werden",
     "notifications.fiveHoursAgo": "vor 5 Stunden",
-    "notifications.accountUpdate": "Kontoaktualisierung",
+    "notifications.accountUpdate": "Mise à Jour du Compte",
     "notifications.accountUpdateDesc": "Ihre Kontodetails wurden aktualisiert",
     "notifications.oneDay": "vor 1 Tag",
     "profile.title": "Profil",
@@ -443,16 +445,16 @@ const translations: Record<string, Record<string, string>> = {
     "settings.subtitle": "Pas je accountvoorkeuren aan",
     "settings.preferences": "Voorkeuren",
     "settings.notifications": "Meldingen",
-    "settings.notifications.desc": "Ontvang app-meldingen",
+    "settings.notifications.desc": "Ontvang toepassingskennisgewings",
     "settings.darkMode": "Donkere modus",
-    "settings.darkMode.desc": "Donkere modusthema in-/uitschakelen",
+    "settings.darkMode.desc": "Skakel donker modus tema",
     "settings.language": "Taal",
     "settings.language.desc": "Kies je voorkeurstaal",
     "settings.security": "Beveiliging",
     "settings.twoFactor": "Tweefactorauthenticatie",
     "settings.twoFactor.desc": "Voeg een extra beveiligingslaag toe",
     "settings.passwordProtection": "Wachtwoordbeveiliging",
-    "settings.passwordProtection.desc": "Wachtwoord vereisen voor gevoelige acties",
+    "settings.passwordProtection.desc": "Vereis wagwoord voor sensitiewe aksies",
     "analytics.title": "Analyse-overzicht",
     "analytics.subtitle": "Volg je financiële prestaties",
     "analytics.performanceTrends": "Prestatie trends",
@@ -468,13 +470,13 @@ const translations: Record<string, Record<string, string>> = {
     "notifications.paymentSuccessDesc": "Je laatste betaling is succesvol verwerkt",
     "notifications.twoHoursAgo": "2 uur geleden",
     "notifications.failedTransaction": "Mislukte transactie",
-    "notifications.transactionFailedDesc": "Kan transactie #12345 niet verwerken",
+    "notifications.transactionFailedDesc": "Kon nie transactie #12345 verwerken nie",
     "notifications.fiveHoursAgo": "5 uur geleden",
     "notifications.accountUpdate": "Accountupdate",
     "notifications.accountUpdateDesc": "Je accountgegevens zijn bijgewerkt",
     "notifications.oneDay": "1 dag geleden",
     "profile.title": "Profiel",
-    "profile.subtitle": "Beheer je accountinformatie",
+    "profile.subtitle": "Bestuur jou rekeninginligting",
     "profile.personalInfo": "Persoonlijke informatie",
     "profile.personalInfoDesc": "Je basisprofielgegevens",
     "profile.fullName": "Volledige naam",
@@ -599,7 +601,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  const t = (key: string): string => {
+  const t = (key: string): string | string[] => {
     const langTranslations = translations[currentLanguage.value];
     return langTranslations && langTranslations[key] ? langTranslations[key] : key;
   };

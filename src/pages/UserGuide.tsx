@@ -17,6 +17,16 @@ import {
 const UserGuide = () => {
   const { t } = useLanguage();
 
+  // Helper function to render items from translation value
+  const renderItems = (value: string | string[]) => {
+    if (Array.isArray(value)) {
+      return value.map((item, index) => (
+        <li key={index}>{item}</li>
+      ));
+    }
+    return <li>{value}</li>;
+  };
+
   return (
     <ScrollArea className="h-[calc(100vh-120px)]">
       <div className="space-y-8 pb-8">
@@ -35,16 +45,12 @@ const UserGuide = () => {
               {t("guide.overview.description")}
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4 text-muted-foreground">
-              {t("guide.overview.items").map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+              {renderItems(t("guide.overview.items"))}
             </ul>
             <div className="mt-4">
               <p className="font-medium text-wood-600">{t("guide.overview.card.shows")}</p>
               <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
-                {t("guide.overview.card.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.overview.card.items"))}
               </ul>
             </div>
           </Card>
@@ -62,9 +68,7 @@ const UserGuide = () => {
                 {t("guide.metrics.graphs")}
               </h3>
               <ul className="list-disc list-inside space-y-1 ml-4 mt-2 text-muted-foreground">
-                {t("guide.metrics.graphs.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.metrics.graphs.items"))}
               </ul>
             </div>
             <Separator />
@@ -74,9 +78,7 @@ const UserGuide = () => {
                 {t("guide.metrics.kpi")}
               </h3>
               <ul className="list-disc list-inside space-y-1 ml-4 mt-2 text-muted-foreground">
-                {t("guide.metrics.kpi.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.metrics.kpi.items"))}
               </ul>
             </div>
           </Card>
@@ -91,36 +93,28 @@ const UserGuide = () => {
             <Card className="p-6">
               <h3 className="text-lg font-medium text-wood-600 mb-3">{t("guide.usage.updates")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("guide.usage.updates.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.usage.updates.items"))}
               </ul>
             </Card>
 
             <Card className="p-6">
               <h3 className="text-lg font-medium text-wood-600 mb-3">{t("guide.usage.balance")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("guide.usage.balance.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.usage.balance.items"))}
               </ul>
             </Card>
 
             <Card className="p-6">
               <h3 className="text-lg font-medium text-wood-600 mb-3">{t("guide.usage.progress")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("guide.usage.progress.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.usage.progress.items"))}
               </ul>
             </Card>
 
             <Card className="p-6">
               <h3 className="text-lg font-medium text-wood-600 mb-3">{t("guide.usage.reflection")}</h3>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {t("guide.usage.reflection.items").map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {renderItems(t("guide.usage.reflection.items"))}
               </ul>
             </Card>
           </div>
