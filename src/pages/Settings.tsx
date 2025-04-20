@@ -1,6 +1,8 @@
+
 import { Card } from "@/components/ui/card";
 import { Bell, Moon, Globe, Lock, Shield } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const Settings = () => {
   return (
@@ -40,9 +42,10 @@ const Settings = () => {
               <Globe className="h-5 w-5 text-muted-foreground" />
               <div>
                 <p className="font-medium">Language</p>
-                <p className="text-sm text-muted-foreground">English (US)</p>
+                <p className="text-sm text-muted-foreground">Choose your preferred language</p>
               </div>
             </div>
+            <LanguageSelector />
           </div>
         </div>
       </Card>
