@@ -546,7 +546,7 @@ const translations: Record<string, Record<string, TranslationValue>> = {
     "notifications.paymentSuccessDesc": "Jou laaste betaling is suksesvol verwerk",
     "notifications.twoHoursAgo": "2 uur gelede",
     "notifications.failedTransaction": "Mislukte transaksie",
-    "notifications.transactionFailedDesc": "Kon nie transaksie #12345 verwerk nie",
+    "notifications.transactionFailedDesc": "Kon nie transactie #12345 verwerk nie",
     "notifications.fiveHoursAgo": "5 uur gelede",
     "notifications.accountUpdate": "Rekeningopdatering",
     "notifications.accountUpdateDesc": "Jou rekeningbesonderhede is opgedateer",
