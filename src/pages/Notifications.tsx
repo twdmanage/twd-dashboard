@@ -1,36 +1,40 @@
+
 import { Card } from "@/components/ui/card";
 import { Bell, Check, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Notifications = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-4xl font-bold text-primary">Notifications</h1>
-        <p className="text-secondary-foreground">Stay updated with your account activity</p>
+        <h1 className="text-4xl font-bold text-primary">{t("notifications.title")}</h1>
+        <p className="text-secondary-foreground">{t("notifications.subtitle")}</p>
       </header>
 
       <Card className="glass-card p-6">
-        <h3 className="text-lg font-semibold mb-4">Recent Notifications</h3>
+        <h3 className="text-lg font-semibold mb-4">{t("notifications.recentNotifications")}</h3>
         <div className="space-y-4">
           {[
             {
-              title: "Payment Successful",
-              description: "Your last payment was processed successfully",
-              time: "2 hours ago",
+              title: t("notifications.paymentSuccessful"),
+              description: t("notifications.paymentSuccessDesc"),
+              time: t("notifications.twoHoursAgo"),
               icon: Check,
               color: "text-green-500",
             },
             {
-              title: "Failed Transaction",
-              description: "Unable to process transaction #12345",
-              time: "5 hours ago",
+              title: t("notifications.failedTransaction"),
+              description: t("notifications.transactionFailedDesc"),
+              time: t("notifications.fiveHoursAgo"),
               icon: X,
               color: "text-red-500",
             },
             {
-              title: "Account Update",
-              description: "Your account details have been updated",
-              time: "1 day ago",
+              title: t("notifications.accountUpdate"),
+              description: t("notifications.accountUpdateDesc"),
+              time: t("notifications.oneDay"),
               icon: Bell,
               color: "text-blue-500",
             },
